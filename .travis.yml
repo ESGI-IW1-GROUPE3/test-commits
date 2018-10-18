@@ -8,11 +8,11 @@ cache:
     - $HOME/.composer/cache
 
 before_script:
- - wget https://cs.sensiolabs.org/download/php-cs-fixer-v2.phar -O php-cs-fixer
- - sudo php-cs-fixer self-update
+ - wget https://cs.sensiolabs.org/download/php-cs-fixer-v2.phar
+ - sudo php-cs-fixer-v2.phar self-update
 
 script:
- - php php-cs-fixer --dry-run -v fix .
+ - php php-cs-fixer-v2.phar --dry-run -v fix .
 
 notifications:
   email: true
