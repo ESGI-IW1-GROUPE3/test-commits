@@ -1,18 +1,19 @@
 language: php
 php:
-    -  '5.6'
-    -  '7.1'
+  - '5.6'
+  - '7.1'
 
 cache:
   directories:
     - $HOME/.composer/cache
 
 before_script:
- - wget https://cs.sensiolabs.org/download/php-cs-fixer-v2.phar
- - sudo php-cs-fixer.phar self-update
+  - composer global require friendsofphp/php-cs-fixer
+  - export PATH="$PATH:$HOME/.composer/vendor/bin"
+  - ./composer.phar global update friendsofphp/php-cs-fixer
 
 script:
- - php php-cs-fixer-v2.phar --dry-run -v fix .
+  - php php-cs-fixer.phar fix .
 
 notifications:
   email: true
