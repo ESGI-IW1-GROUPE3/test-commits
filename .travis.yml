@@ -9,7 +9,7 @@ cache:
 
 before_script:
  - wget https://cs.sensiolabs.org/download/php-cs-fixer-v2.phar
- - sudo php-cs-fixer-v2.phar self-update
+ - sudo php-cs-fixer.phar self-update
 
 script:
  - php php-cs-fixer-v2.phar --dry-run -v fix .
