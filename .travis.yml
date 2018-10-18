@@ -8,8 +8,8 @@ cache:
     - $HOME/.composer/cache
 
 before_script:
- - curl -s http://getcomposer.org/installer | php
- - php composer.phar install --dev
+ - wget https://cs.sensiolabs.org/download/php-cs-fixer-v2.phar -O php-cs-fixer
+ - sudo php-cs-fixer self-update
 
 script:
  - php php-cs-fixer --dry-run -v fix .
